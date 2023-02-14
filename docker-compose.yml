@@ -1,0 +1,9 @@
+version: '3'
+services:
+  ui:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: ui
+    ports:
+      - 5500:80
