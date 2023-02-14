@@ -1,0 +1,20 @@
+<form class="search-form">
+  <mat-form-field class="search-full-width" appearance="fill">
+    <mat-label>Search by city, zip code, or latitude & longitude</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Search"
+           matInput
+           [formControl]="searchControl"
+           [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+        {{displayFn(option)}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<div *ngIf="weatherData$ | async; let weatherData">
+  <app-weather-current [currentWeather]="weatherData"></app-weather-current>
+</div>

@@ -1,0 +1,40 @@
+<mat-card class="weather-current-card">
+  <mat-card-header>
+    <mat-card-title>{{currentWeather.name}}, {{currentWeather.sys.country}}</mat-card-title>
+    <mat-card-subtitle>As of {{currentWeather.dt * 1000 | date:'h:mm:ss a'}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{imageSource}} alt="Photo of current weather">
+  <mat-card-content>
+    <div class="flex-row">
+      <div class="conditions">
+        <span class="large-font uppercase">
+          {{currentWeather.weather[0].description}}
+        </span>
+      </div>
+    </div>
+    <div class="flex-row">
+      <div class="temperature">
+        <span class="large-font">
+          {{currentWeather.main.temp}}° F
+        </span>
+        <span>
+          Feels like
+        </span>
+        <span>
+          {{currentWeather.main.feels_like}}° F
+        </span>
+      </div>
+      <div class="misc">
+        <span>
+          Humidity: {{currentWeather.main.humidity}}%
+        </span>
+        <span>
+          Pressure: {{(currentWeather.main.pressure / 33.86).toFixed(2)}} in
+        </span>
+      </div>
+    </div>
+
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>
