@@ -31,6 +31,7 @@ export class WeatherCurrentComponent implements OnChanges {
         break;
       case "Rain":
       case "Drizzle":
+      case "Mist":
         this.imageSource = "assets/img/Rain.png"
         break;
       case "Thunderstorm":
