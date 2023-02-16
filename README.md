@@ -1,6 +1,6 @@
 # Weather Buddy
 
-Weather Buddy is a reference application for using the [OpenWeatherMap API](https://openweathermap.org/api) to display the current weather for a given location.
+Weather Buddy is a reference application for using the [OpenWeatherMap API](https://openweathermap.org/api) to display the current weather for a given location. A working version can be found at [https://weatherbuddy.azurewebsites.net](https://weatherbuddy.azurewebsites.net).
 
 ![Dashboard](docs/img/dashboard.png)
 
