@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "j6pUwydz7VEVD+RGUXYlDRP6UUuZkBZbM67u3v0NqeNrDMONb6HG6NYLB2kF1eQEM4CfLxRmv8/IWaBLBTS1Pw==",
+  "success": true,
+  "projectFilePath": "/Users/jdiekhoff/_Src/Sdbx/Personal/weatherbuddy/WeatherBuddy.Api/WeatherBuddy.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/jdiekhoff/.nuget/packages/aspnetcore.proxy/4.4.0/aspnetcore.proxy.4.4.0.nupkg.sha512",
+    "/Users/jdiekhoff/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/jdiekhoff/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/jdiekhoff/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/jdiekhoff/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/jdiekhoff/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/jdiekhoff/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

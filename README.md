@@ -4,23 +4,9 @@ Weather Buddy is a reference application for using the [OpenWeatherMap API](http
 
 ![Dashboard](docs/img/dashboard.png)
 
-## Development server
-
-First you'll need to create an environment file called `environment.development.ts` under `src/environments` if you don't already have one. You can copy the `environment.ts` file. You will need to provide an API key for OpenWeatherMap in the development environment file.
-
-Run `ng serve` for a dev server. Navigate to [http://localhost:4200/](http://localhost:4200/). The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 ## Architecture
 
-Weather buddy has a simple architecture. It's an Angular application whose primary means of hosting is via a docker container. The app currently only communicates with the OpenWeatherMap API.
+Weather buddy has a simple architecture. It's an Angular application that communicates with a proxy .NET Web API to communicate with the OpenWeatherMap API.
 
 ![Architecture](docs/img/weatherapp-Architecture.drawio.png)
 
@@ -28,18 +14,48 @@ You can see a detailed flow of how the app handles searches for the user.
 
 ![Workflow](docs/img/weatherapp-Workflow.drawio.png)
 
+## Running locally
+
+You'll need to do some first-time setup if you've never run the project locally:
+
+1. Open up a terminal and navigate to the WeatherBuddy.Api folder
+2. Run `dotnet user-secrets init`
+3. Run `dotnet user-secrets set "OpenWeatherMap:ApiKey" "INSERT-YOUR-API-KEY-HERE"`, where you will need to provide your own OpenWeatherMap API key.
+
+That's it for initial setup. The following is for regular development:
+
+1. Open up a terminal and navigate to WeatherBuddy.Api and run `dotnet run` for a .NET dev server. The web API will be listening on [http://localhost:4100/](http://localhost:4100/) and [https://localhost:4101/](http://localhost:4101/).
+2. Open another terminal and navigate to WeatherBuddy.Spa and run `ng serve` for a dev server. Navigate to [http://localhost:4200/](http://localhost:4200/). The application will automatically reload if you change any of the source files.
+
+There are additional instructions on how to run [Docker containers](#docker).
+
+## Angular Frontend
+
+### Code scaffolding
+
+Inside the WeatherBuddy.Spa folder, you can run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+### Build
+
+Inside the WeatherBuddy.Spa folder, you can run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+### Running unit tests
+
+Inside the WeatherBuddy.Spa folder, you can run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+### Running end-to-end tests
+
+Inside the WeatherBuddy.Spa folder, you can run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Dotnet API backend
+
+### Build
+
+Inside the WeatherBuddy.Spa folder, you can run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
 ## Docker
 
-A Dockerfile is included along with a docker-compose file. This will build a production ready version of the angular app. You first need to ensure that there is an `environment.production.ts` file under `src/environments` and provide an API key for OpenWeatherMap. After that, all you need to do is run
-`docker-compose up`. If you make any changes to the code you'll need to then run `docker-compose up --build` to update the Docker image. By default the container is listening on port 5500 and the app can be viewed at [http://localhost:5500](http://localhost:5500).
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Dockerfiles for the angular app and the .NET API are included. These will build production ready versions of the angular app and .NET Web API.
 
 ## Future enhancements
 

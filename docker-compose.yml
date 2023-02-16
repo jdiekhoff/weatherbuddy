@@ -1,9 +1,19 @@
 version: '3'
 services:
-  ui:
+  server:
     build:
       context: ./
-      dockerfile: Dockerfile
-    container_name: ui
+      dockerfile: Dockerfile.Api
+    container_name: server
     ports:
-      - 5500:80
+      - 5100:80
+
+  # ui:
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile.Spa
+  #   container_name: ui
+  #   ports:
+  #     - 5500:80
+  #   links:
+  #     - server

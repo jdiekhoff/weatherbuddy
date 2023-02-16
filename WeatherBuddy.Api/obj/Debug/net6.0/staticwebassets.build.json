@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1Yg0/y/BfqbOK5U80rkNtTdR5run7Is0H6ZiZAeMens=",
+  "Source": "WeatherBuddy.Api",
+  "BasePath": "_content/WeatherBuddy.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
