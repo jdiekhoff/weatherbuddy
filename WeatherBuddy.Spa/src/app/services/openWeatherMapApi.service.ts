@@ -13,26 +13,26 @@ import { NamedLatLong } from '../models/namedLatLong.model';
 export class OpenWeatherMapApiService {
   private openWeatherBaseUrl: string;
   constructor(private httpClient: HttpClient) {
-    this.openWeatherBaseUrl = "http://api.openweathermap.org";
+    this.openWeatherBaseUrl = environment.openWeatherMap.url;
   }
 
   getCurrentWeather(latitude: number, longitude: number, units="imperial") : Observable<CurrentWeather> {
-    var url = `${this.openWeatherBaseUrl}/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}&appid=${environment.openWeatherMap.apiKey}`
+    var url = `${this.openWeatherBaseUrl}/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=${units}`
     return this.httpClient.get<CurrentWeather>(url);
   }
 
   directGeocodeByName(cityName: string) : Observable<Location[]> {
-    var url = `${this.openWeatherBaseUrl}/geo/1.0/direct?q=${cityName}&limit=5&appid=${environment.openWeatherMap.apiKey}`
+    var url = `${this.openWeatherBaseUrl}/geo/1.0/direct?q=${cityName}&limit=5`
     return this.httpClient.get<Location[]>(url);
   }
 
   directGeocodeByZipCode(zipCode: string, country="US") : Observable<ZipCode> {
-    var url = `${this.openWeatherBaseUrl}/geo/1.0/zip?zip=${zipCode},${country}&appid=${environment.openWeatherMap.apiKey}`
+    var url = `${this.openWeatherBaseUrl}/geo/1.0/zip?zip=${zipCode},${country}`
     return this.httpClient.get<ZipCode>(url);
   }
 
   reverseGeocodeByLatLong(latitude: number, longitude: number) : Observable<NamedLatLong[]> {
-    var url = `${this.openWeatherBaseUrl}/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=${environment.openWeatherMap.apiKey}`
+    var url = `${this.openWeatherBaseUrl}/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5`
     return this.httpClient.get<NamedLatLong[]>(url);
   }
 }
