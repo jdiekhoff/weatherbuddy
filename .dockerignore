@@ -1,3 +1,5 @@
+**/node_modules
+
 **/[b|B]in
 **/[o|O]bj
 [b|B]in/

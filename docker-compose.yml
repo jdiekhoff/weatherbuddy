@@ -8,12 +8,12 @@ services:
     ports:
       - 5100:80
 
-  # ui:
-  #   build:
-  #     context: ./
-  #     dockerfile: Dockerfile.Spa
-  #   container_name: ui
-  #   ports:
-  #     - 5500:80
-  #   links:
-  #     - server
+  ui:
+    build:
+      context: ./
+      dockerfile: Dockerfile.Spa
+    container_name: ui
+    ports:
+      - 5500:80
+    links:
+      - server
